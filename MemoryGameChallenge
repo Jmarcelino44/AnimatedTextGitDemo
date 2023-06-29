@@ -1,0 +1,211 @@
+Memory Game Challenge
+
+<!DocHTML>
+<html lang=”en”>
+<head>
+<meta charset=”UTF-8”/>
+<meta http-equiv=”X-UA-Compatible” content=”IE=edge”/>
+<meta name=”viewpoint” content=”width=device-width, initial-scale=1.0”/>
+<title> Memory Game Challenge</title>
+<link rel “stylesheet” href=”style.css”/>
+</head>
+<body>
+<h1>Lives: <span class=”playerLivesCount”></span</h1>
+<section></section>
+<script src=”./app.js”></script>
+</body>
+</html>
+
+	
+*{
+margin: 0;
+padding: 0;
+Box-sizing: border-box;
+
+Section {
+Display: grid;
+Grid-template-colums: repeat(4,8rem)
+Grid-template-rows: repeat(4,8rem)
+Perspective: 800pn;
+Grid-gap: 2rem;
+
+.face,.back {
+Width: 100%
+Height: 100%
+Position: absolute;
+Pointer-events: none;
+
+Body {
+Height: 100vh;
+Background: #74ebds;
+background-webkit-linear-gradient( to right, teal);
+Display: flex;
+Justify-content: center;
+Align-items: center;
+Flex-direction: column;
+}
+
+.back  {
+Background: white;
+Backface-visibility: hidden;
+
+
+.card{
+Position: relative;
+Transform-stole: preserve-3d;
+Transform: rotateY(180deg);
+Transition: all 2s cubic-bezier(0.175,0.885,0.32,1.275);
+Box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+}
+
+.toggleCard {
+Transform: rotateY(180deg)
+}
+
+.face{
+Transform: rotateY(-180deg);
+}
+
+
+
+//Start Javascript
+Const section= document.querySelector(“section”);
+Const playerLivesCount= document.querySelector(“span”);
+Let playerLives=6;
+
+
+//Link Text
+playerLivesCount.textContent=playerLives;
+
+
+//Generate the Data
+Const getData=() => [{}]
+
+Const data=getData();
+Const getdata=()=> [
+
+	
+
+//Add Pictures
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZgg9x1TAb2kFsl8ia?e=lnmoGN”, name;”Beatles”},
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghYgTYBt81YGwzjJ?e=JKco0E”, name:”ACDC”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghK-TQz0vcTFwn92?e=3cqHoQ”, name:”Led Zeppelin”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghd18SyAErFaKNjz?e=U5lOKe”, name:Metallica”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghgsM3JpYOzwFda5?e=Oqd12E”, name: MJ”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghT0CacITH6rGkw0?e=DZd2aX”, name:Nirvana”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghVYmSh1-sXmWNxC?e=4C7ZD9”, name: Pink Floyd”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghOKCG1N5WBfENfK?e=SOjCki”, name: RHCP”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghncsukUA-T8M_Dx?e=E8Xv3g”, name: Rolling Stones”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghonG3juUlRjs6SM?e=tjFXIQ”, name: The Who”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZgg9x1TAb2kFsl8ia?e=lnmoGN”, name;”Beatles”},
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghYgTYBt81YGwzjJ?e=JKco0E”, name:”ACDC”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghK-TQz0vcTFwn92?e=3cqHoQ”, name:”Led Zeppelin”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghd18SyAErFaKNjz?e=U5lOKe”, name:Metallica”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghgsM3JpYOzwFda5?e=Oqd12E”, name: MJ”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghT0CacITH6rGkw0?e=DZd2aX”, name:Nirvana”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghVYmSh1-sXmWNxC?e=4C7ZD9”, name: Pink Floyd”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghOKCG1N5WBfENfK?e=SOjCki”, name: RHCP”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghncsukUA-T8M_Dx?e=E8Xv3g”, name: Rolling Stones”}
+{img src= “https://1drv.ms/i/s!AhYI16A_D3rZghonG3juUlRjs6SM?e=tjFXIQ”, name: The Who”}
+
+
+
+
+
+
+Const randomize=() => {
+Const cardData=getData();
+console.log(cardData);
+CardData.sort(e) => Math.random()-0.5);
+console.lo(cardData);
+};
+
+
+Const CardGenerator= () => {
+Const cardData=randomize();
+cardData.forEach(item) =  {
+Const card=document.createElement(‘div”);
+Const card= document.createElement(“img”);
+Const card=document.createElement(“div”);
+card.classList=”card”;
+face.classList=”face”;
+back.classList=”back”;
+
+face.src=item.imgsrc;
+card.SetAttribute(“name”,item.name);
+
+
+//Attach the cards to the section
+section.appendChild(card);
+card.appendChild(face);
+card.appendChild(back);
+});
+};
+
+
+
+card.addEventListener(‘Click”,(e) => {
+card.classList.toggle(“toggleCard”);
+checkcards(e);
+});
+
+
+
+//Check Cards
+Const checkcards=(e)=>{
+console.log(e)
+Const clickedCard=e.target;
+clickedcard.classList.add(“flipped”);
+Const flippedcards=document.querySelectorAll(‘.flipped”);
+Const toggleCard= document.querySelectorAll(“.toggleCard);
+console.log(flippedCards);
+
+
+if(flippedCrads.Length === 2) {
+If (flippedCards[0].getAttribute(“name”) === flippedCards[1].getAttribute(“name”);
+}
+console.log(“match”)
+flippedCards.forEach((card)=>{
+card.classLot.remove(“flipped”);
+card.style.pointerEvents=”none’;
+
+}else{
+console.log(“wrong”)
+flippedcards.forEach(card=> {
+card.classList.remove(“flipped”);
+setTimeout(()->card.classList.remove(“toggleCard”),1000);
+section.style.pointerEvents=”all”;
+};
+
+
+
+
+playerLives –;
+playerLivesCount.textContent=playerLives;
+If (playerLives ===0){
+restart(“TRY AGAIN”);
+If (toggleCard.length ===16){
+	restart(“YOU WON”);
+
+
+//Restart
+Const restart = () =>
+Let cardData=randomize();
+Let faces= document.querySelectorAll(“.face”);
+Let cards= document.querySelectorAll(“.card”);
+section.style.pointerEvents=”none”;
+
+cardDataforEach((item,index)=> {
+cards[index].classList.remove(“toggleCard”);
+//Randomize
+cards[index].style.pointerEvents=”all”;
+faces[index].src=item.imgsrc;
+cards[index].setAttribute[‘name’,item.name];
+});
+
+playerLives=6;
+playerLivesCount.textContent=playerLives;
+Timeout(()=>window.alert(text,100);
+
+
+
