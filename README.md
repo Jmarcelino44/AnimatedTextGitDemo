@@ -1,3 +1,3 @@
 # AnimatedTextGitDemo
 Exercise READMEFILE 
-commit number one
+Memory Game Challenge
